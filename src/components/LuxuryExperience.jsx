@@ -23,7 +23,7 @@ export default function LuxuryExperience() {
 
         {/* Category Badge */}
         <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-[#E3E0D8] rounded-full w-max mb-8 transition-transform hover:-translate-y-1 duration-300 cursor-default">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#E57A55] animate-pulse"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-[#ff6e00] animate-pulse"></span>
           <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#5A605C]">
             The Clifftop Sanctuary
           </span>
@@ -32,7 +32,7 @@ export default function LuxuryExperience() {
         {/* Heading - Heavy Sans-serif */}
         <h2 className="font-sans text-5xl sm:text-6xl lg:text-[80px] font-black uppercase tracking-tighter leading-[0.85] mb-8">
           Your Oceanside <br className="hidden lg:block" />
-          <span className="text-[#E57A55]">Sanctuary</span>
+          <span className="text-[#ff6e00]">Sanctuary</span>
         </h2>
 
         {/* Description */}
@@ -44,7 +44,7 @@ export default function LuxuryExperience() {
         <div className="grid sm:grid-cols-3 gap-8 pt-8 border-t border-[#E3E0D8]">
           {stats.map((stat, idx) => (
             <div key={idx} className="group">
-              <span className="font-sans text-4xl font-extrabold text-[#E57A55] tracking-tight block mb-2 group-hover:translate-x-1 transition-transform duration-300">
+              <span className="font-sans text-4xl font-extrabold text-[#ff6e00] tracking-tight block mb-2 group-hover:translate-x-1 transition-transform duration-300">
                 {stat.value}
               </span>
               <p className="text-[10px] font-bold uppercase tracking-widest text-[#8A908C] mb-1">

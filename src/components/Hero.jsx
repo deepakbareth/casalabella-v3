@@ -15,7 +15,7 @@ export default function Hero() {
       </div>
 
       {/* Broad Gradient Overlays for Text Readability */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#121413] via-[#2D332F]/60 lg:via-[#2D332F]/50 to-transparent opacity-90 pointer-events-none" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#121413] via-[#2D332F]/60 lg:via-[#2D332F]/50 to-transparent opacity-60 pointer-events-none" />
       <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#121413]/80 via-[#121413]/40 lg:via-transparent to-transparent opacity-70 pointer-events-none" />
 
       {/* Main Content Container - Broad Bottom Layout */}
@@ -26,7 +26,7 @@ export default function Hero() {
 
           {/* Location Badge */}
           <div className="inline-flex items-center gap-2 lg:gap-3 px-4 py-2 lg:px-5 lg:py-2.5 backdrop-blur-md bg-white/10 border border-white/20 rounded-full w-max mb-5 lg:mb-8 transition-transform hover:-translate-y-1 duration-300 cursor-default">
-            <span className="w-2 h-2 lg:w-2.5 lg:h-2.5 rounded-full bg-[#E57A55] animate-pulse shadow-[0_0_12px_#E57A55]"></span>
+            <span className="w-2 h-2 lg:w-2.5 lg:h-2.5 rounded-full bg-[#ff6e00] animate-pulse shadow-[0_0_12px_#ff6e00]"></span>
             <span className="text-[9px] lg:text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#F7F5F0]">
               Isla Mujeres, Mexico
             </span>
@@ -35,11 +35,11 @@ export default function Hero() {
           {/* Heavy Broad Heading */}
           <h1 className="font-sans text-5xl sm:text-7xl lg:text-[130px] font-black uppercase tracking-tighter leading-[0.95] lg:leading-[0.85] text-[#F7F5F0] mb-5 lg:mb-8">
             Casa <br />
-            <span className="text-[#E57A55]">La Bella</span>
+            <span className="text-[#ff6e00]">La Bella</span>
           </h1>
 
           {/* Description */}
-          <p className="text-sm sm:text-base lg:text-xl text-[#F7F5F0]/80 font-medium leading-relaxed max-w-lg border-l-2 border-[#E57A55] pl-4 lg:pl-6">
+          <p className="text-sm sm:text-base lg:text-xl text-[#F7F5F0]/80 font-medium leading-relaxed max-w-lg border-l-2 border-[#ff6e00] pl-4 lg:pl-6">
             Experience the ultimate coastal escape. Perched on the majestic cliffs of Punta Sur, where bold modern architecture meets the endless Caribbean sea.
           </p>
 
@@ -49,7 +49,7 @@ export default function Hero() {
         <div className="flex flex-col items-start lg:items-end w-full lg:w-auto mt-2 lg:mt-0">
 
           {/* Glassmorphism Data Grid */}
-          <div className="grid grid-cols-2 gap-x-6 lg:gap-x-12 gap-y-4 lg:gap-y-6 backdrop-blur-xl bg-white/10 lg:bg-white/5 border border-white/20 p-6 lg:p-8 rounded-2xl mb-4 lg:mb-8 w-full sm:w-auto shadow-2xl lg:shadow-none">
+          <div className="grid grid-cols-2 gap-x-6 lg:gap-x-12 gap-y-4 lg:gap-y-6 backdrop-blur-[4px]  bg-white/10 lg:bg-white/5 border border-white/10 p-6 lg:p-8 rounded-2xl mb-4 lg:mb-8 w-full sm:w-auto shadow-2xl lg:shadow-none">
             <div>
               <p className="text-[9px] lg:text-[10px] font-bold uppercase tracking-widest text-[#F7F5F0]/60 lg:text-[#F7F5F0]/50 mb-1">Elevation</p>
               <p className="font-mono text-[#F7F5F0] text-xs lg:text-sm font-semibold tracking-tight">14m / 45ft</p>
@@ -67,7 +67,7 @@ export default function Hero() {
           </div>
 
           {/* Action Button */}
-          <button className="w-full sm:w-auto px-6 lg:px-10 py-4 lg:py-5 bg-[#E57A55] text-[#F7F5F0] text-[11px] lg:text-xs font-black uppercase tracking-[0.2em] hover:bg-[#F7F5F0] hover:text-[#2D332F] transition-colors duration-300 rounded-md lg:rounded-sm">
+          <button className="w-full sm:w-auto px-6 lg:px-10 py-4 lg:py-5 bg-[#ff6e00] text-[#F7F5F0] text-[11px] lg:text-xs font-black uppercase tracking-[0.2em] hover:bg-[#F7F5F0] hover:text-[#2D332F] transition-colors duration-300 rounded-md lg:rounded-sm">
             Reserve the Estate
           </button>
 

@@ -35,9 +35,9 @@ export default function BookingInquiry() {
     }, 1500);
   };
 
-  const inputClasses = "w-full bg-[#F7F5F0]/60 focus:bg-white border border-[#E3E0D8] focus:border-[#E57A55] rounded-full px-6 py-3.5 text-sm text-[#2D332F] focus:outline-none transition-all placeholder-[#2D332F]/40 font-sans font-medium";
-  const selectClasses = "w-full bg-[#F7F5F0]/60 focus:bg-white border border-[#E3E0D8] focus:border-[#E57A55] rounded-full px-6 py-3.5 text-sm text-[#2D332F] focus:outline-none transition-all font-sans font-medium appearance-none cursor-pointer";
-  const textareaClasses = "w-full bg-[#F7F5F0]/60 focus:bg-white border border-[#E3E0D8] focus:border-[#E57A55] rounded-2xl px-6 py-4 text-sm text-[#2D332F] focus:outline-none transition-all placeholder-[#2D332F]/40 font-sans font-medium resize-none";
+  const inputClasses = "w-full bg-[#F7F5F0]/60 focus:bg-white border border-[#E3E0D8] focus:border-[#ff6e00] rounded-full px-6 py-3.5 text-sm text-[#2D332F] focus:outline-none transition-all placeholder-[#2D332F]/40 font-sans font-medium";
+  const selectClasses = "w-full bg-[#F7F5F0]/60 focus:bg-white border border-[#E3E0D8] focus:border-[#ff6e00] rounded-full px-6 py-3.5 text-sm text-[#2D332F] focus:outline-none transition-all font-sans font-medium appearance-none cursor-pointer";
+  const textareaClasses = "w-full bg-[#F7F5F0]/60 focus:bg-white border border-[#E3E0D8] focus:border-[#ff6e00] rounded-2xl px-6 py-4 text-sm text-[#2D332F] focus:outline-none transition-all placeholder-[#2D332F]/40 font-sans font-medium resize-none";
 
   return (
     <section id="inquire" className="py-14 lg:py-20 bg-[#F7F5F0] text-[#2D332F] border-t border-[#E3E0D8] relative overflow-hidden">
@@ -57,13 +57,13 @@ export default function BookingInquiry() {
         {/* Title */}
         <div className="mb-20 text-center">
           <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-[#E3E0D8] rounded-full w-max mb-8 transition-transform hover:-translate-y-1 duration-300 cursor-default">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#E57A55] animate-pulse"></span>
+            <span className="w-2.5 h-2.5 rounded-full bg-[#ff6e00] animate-pulse"></span>
             <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#5A605C]">
               Reservation Inquiry
             </span>
           </div>
           <h2 className="font-sans text-5xl sm:text-6xl lg:text-[80px] font-black uppercase tracking-tighter leading-[0.85] mb-8">
-            Reserve your <span className="text-[#E57A55]">experience</span>
+            Reserve your <span className="text-[#ff6e00]">experience</span>
           </h2>
         </div>
 
@@ -71,9 +71,9 @@ export default function BookingInquiry() {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 max-w-6xl mx-auto items-stretch">
 
           {/* Left Column: Direct Contact Details (4 columns) */}
-          <div className="lg:col-span-4 flex flex-col justify-between p-8 sm:p-10 border border-[#E3E0D8] bg-white rounded-2xl shadow-sm hover:border-[#E57A55] transition-colors duration-500">
+          <div className="lg:col-span-4 flex flex-col justify-between p-8 sm:p-10 border border-[#E3E0D8] bg-white rounded-2xl shadow-sm hover:border-[#ff6e00] transition-colors duration-500">
             <div>
-              <span className="text-[9px] uppercase tracking-[0.3em] text-[#E57A55] font-extrabold block mb-4">Direct Channel</span>
+              <span className="text-[9px] uppercase tracking-[0.3em] text-[#ff6e00] font-extrabold block mb-4">Direct Channel</span>
               <h3 className="font-sans text-2xl font-bold uppercase tracking-tight text-[#2D332F] mb-6">
                 Guest Concierge
               </h3>
@@ -84,27 +84,27 @@ export default function BookingInquiry() {
               <div className="space-y-4">
                 <a
                   href="tel:+19703908874"
-                  className="flex items-center gap-4 group p-5 bg-[#E3E0D8]/20 hover:bg-[#E3E0D8]/45 rounded-full border border-[#E3E0D8]/40 hover:border-[#E57A55] transition-all backdrop-blur-md"
+                  className="flex items-center gap-4 group p-5 bg-[#E3E0D8]/20 hover:bg-[#E3E0D8]/45 rounded-full border border-[#E3E0D8]/40 hover:border-[#ff6e00] transition-all backdrop-blur-md"
                 >
-                  <div className="w-12 h-12 rounded-full bg-white border border-[#E3E0D8] flex items-center justify-center text-[#E57A55] group-hover:bg-[#E57A55] group-hover:text-white transition-colors duration-300 shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-white border border-[#E3E0D8] flex items-center justify-center text-[#ff6e00] group-hover:bg-[#ff6e00] group-hover:text-white transition-colors duration-300 shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
                     <span className="text-[9px] text-[#8A908C] uppercase tracking-widest block font-extrabold">Call Owner</span>
-                    <span className="text-sm font-sans text-[#2D332F] font-bold group-hover:text-[#E57A55] transition-colors">1-970-390-8874</span>
+                    <span className="text-sm font-sans text-[#2D332F] font-bold group-hover:text-[#ff6e00] transition-colors">1-970-390-8874</span>
                   </div>
                 </a>
 
                 <a
                   href="mailto:vailcuny@gmail.com?subject=Interested in Booking Casa La Bella"
-                  className="flex items-center gap-4 group p-5 bg-[#E3E0D8]/20 hover:bg-[#E3E0D8]/45 rounded-full border border-[#E3E0D8]/40 hover:border-[#E57A55] transition-all backdrop-blur-md"
+                  className="flex items-center gap-4 group p-5 bg-[#E3E0D8]/20 hover:bg-[#E3E0D8]/45 rounded-full border border-[#E3E0D8]/40 hover:border-[#ff6e00] transition-all backdrop-blur-md"
                 >
-                  <div className="w-12 h-12 rounded-full bg-white border border-[#E3E0D8] flex items-center justify-center text-[#E57A55] group-hover:bg-[#E57A55] group-hover:text-white transition-colors duration-300 shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-white border border-[#E3E0D8] flex items-center justify-center text-[#ff6e00] group-hover:bg-[#ff6e00] group-hover:text-white transition-colors duration-300 shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div className="min-w-0">
                     <span className="text-[9px] text-[#8A908C] uppercase tracking-widest block font-extrabold">Email Direct</span>
-                    <span className="text-sm font-sans text-[#2D332F] font-bold group-hover:text-[#E57A55] transition-colors truncate block font-medium">vailcuny@gmail.com</span>
+                    <span className="text-sm font-sans text-[#2D332F] font-bold group-hover:text-[#ff6e00] transition-colors truncate block font-medium">vailcuny@gmail.com</span>
                   </div>
                 </a>
               </div>
@@ -112,9 +112,9 @@ export default function BookingInquiry() {
 
             {/* Direct Booking details */}
             <div className="mt-12 pt-8 border-t border-[#E3E0D8]/60 flex items-start gap-3">
-              <Shield className="w-5 h-5 text-[#E57A55] shrink-0 mt-0.5" />
+              <Shield className="w-5 h-5 text-[#ff6e00] shrink-0 mt-0.5" />
               <div>
-                <span className="text-[9px] uppercase tracking-widest text-[#E57A55] font-extrabold block mb-1">Secure & Direct</span>
+                <span className="text-[9px] uppercase tracking-widest text-[#ff6e00] font-extrabold block mb-1">Secure & Direct</span>
                 <p className="text-xs font-sans text-[#5A605C] leading-relaxed">
                   Direct bookings bypass platform fees. Cancellation details, rates, and occupancy are fully protected.
                 </p>
@@ -123,7 +123,7 @@ export default function BookingInquiry() {
           </div>
 
           {/* Right Column: Stripe-style Form Panel (8 columns) */}
-          <div className="lg:col-span-8 bg-white border border-[#E3E0D8] shadow-sm rounded-2xl p-8 lg:p-12 flex flex-col justify-center min-h-[480px] hover:border-[#E57A55] transition-colors duration-500">
+          <div className="lg:col-span-8 bg-white border border-[#E3E0D8] shadow-sm rounded-2xl p-8 lg:p-12 flex flex-col justify-center min-h-[480px] hover:border-[#ff6e00] transition-colors duration-500">
             {submitted ? (
               <div className="text-center py-10 flex flex-col items-center justify-center animate-scale-up">
                 <div className="w-16 h-16 bg-[#007979]/10 border border-[#007979]/30 text-[#007979] rounded-full flex items-center justify-center mb-6 shadow-sm">
@@ -261,7 +261,7 @@ export default function BookingInquiry() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-4 bg-[#E57A55]/90 hover:bg-[#E57A55] text-white text-xs font-extrabold uppercase tracking-[0.3em] rounded-full transition-all duration-500 shadow-md flex items-center justify-center gap-2.5 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
+                  className="w-full py-4 bg-[#ff6e00]/90 hover:bg-[#ff6e00] text-white text-xs font-extrabold uppercase tracking-[0.3em] rounded-full transition-all duration-500 shadow-md flex items-center justify-center gap-2.5 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>

@@ -59,7 +59,7 @@ export default function ImmersiveGallery() {
 
         {/* Category Badge */}
         <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-[#E3E0D8] rounded-full w-max mb-8 transition-transform hover:-translate-y-1 duration-300 cursor-default">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#E57A55] animate-pulse"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-[#ff6e00] animate-pulse"></span>
           <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#5A605C]">
             Cinematic Canvas
           </span>
@@ -68,7 +68,7 @@ export default function ImmersiveGallery() {
         {/* Heading */}
         <h2 className="font-sans text-5xl sm:text-6xl lg:text-[80px] font-black uppercase tracking-tighter leading-[0.85] mb-8">
           Shifting <br />
-          <span className="text-[#E57A55]">Light</span>
+          <span className="text-[#ff6e00]">Light</span>
         </h2>
 
         {/* Dynamic Vibe Selectors */}
@@ -82,8 +82,8 @@ export default function ImmersiveGallery() {
             >
               {/* Vibe Clock Selector */}
               <div className={`px-4 py-2 text-[10px] font-mono tracking-widest font-extrabold uppercase rounded-full border transition-all duration-300 mr-5 mt-0.5 ${activeVibe === v.id
-                ? 'border-[#E57A55] bg-[#E57A55]/10 text-[#E57A55]'
-                : 'border-[#E3E0D8] bg-transparent text-[#5A605C] group-hover:border-[#E57A55]/60'
+                ? 'border-[#ff6e00] bg-[#ff6e00]/10 text-[#ff6e00]'
+                : 'border-[#E3E0D8] bg-transparent text-[#5A605C] group-hover:border-[#ff6e00]/60'
                 }`}>
                 {v.time}
               </div>
@@ -91,7 +91,7 @@ export default function ImmersiveGallery() {
               {/* Text Blocks */}
               <div className="flex-1">
                 <div className="flex items-center justify-between gap-4 mb-1">
-                  <h3 className={`font-sans text-xl font-bold uppercase tracking-tight transition-colors duration-300 ${activeVibe === v.id ? 'text-[#E57A55]' : 'text-[#2D332F]/80 group-hover:text-[#2D332F]'
+                  <h3 className={`font-sans text-xl font-bold uppercase tracking-tight transition-colors duration-300 ${activeVibe === v.id ? 'text-[#ff6e00]' : 'text-[#2D332F]/80 group-hover:text-[#2D332F]'
                     }`}>
                     {v.label}
                   </h3>
@@ -103,7 +103,7 @@ export default function ImmersiveGallery() {
                   <p className="font-sans text-sm sm:text-base text-[#5A605C] leading-relaxed mb-3">
                     {v.description}
                   </p>
-                  <p className="font-serif text-sm italic text-[#E57A55]/90 border-l border-[#E57A55]/40 pl-4 py-0.5">
+                  <p className="font-serif text-sm italic text-[#ff6e00]/90 border-l border-[#ff6e00]/40 pl-4 py-0.5">
                     "{v.quote}"
                   </p>
                 </div>

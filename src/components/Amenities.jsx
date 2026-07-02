@@ -19,19 +19,19 @@ export default function Amenities() {
       badgeSub2: "Bedding & Linens Inc.",
       items: [
         {
-          icon: <UtensilsCrossed className="w-5 h-5 text-[#E57A55]" />,
+          icon: <UtensilsCrossed className="w-5 h-5 text-[#ff6e00]" />,
           title: "Chef's Kitchen & Grill",
           category: "Gastronomy",
           desc: "Fully equipped kitchen with gas stove, oven, dishwasher, coffee maker, and premium outdoor gas grill."
         },
         {
-          icon: <Wind className="w-5 h-5 text-[#E57A55]" />,
+          icon: <Wind className="w-5 h-5 text-[#ff6e00]" />,
           title: "Climate Control AC",
           category: "Comfort",
           desc: "Individually controlled modern AC units and ceiling fans inside every bedroom and living space."
         },
         {
-          icon: <Sparkles className="w-5 h-5 text-[#E57A55]" />,
+          icon: <Sparkles className="w-5 h-5 text-[#ff6e00]" />,
           title: "Laundry & Linens",
           category: "Comfort",
           desc: "In-unit washer & dryer, clean bath linens, pool towels, and bedding are fully provided."
@@ -49,19 +49,19 @@ export default function Amenities() {
       badgeSub2: "Isla Mujeres, MX",
       items: [
         {
-          icon: <Waves className="w-5 h-5 text-[#E57A55]" />,
+          icon: <Waves className="w-5 h-5 text-[#ff6e00]" />,
           title: "Oceanfront Infinity Pool",
           category: "Estate",
           desc: "Overlooking the turquoise ocean water, featuring sun-lounging beds, private patio seating, and direct oceanfront panoramas."
         },
         {
-          icon: <Sunrise className="w-5 h-5 text-[#E57A55]" />,
+          icon: <Sunrise className="w-5 h-5 text-[#ff6e00]" />,
           title: "Rooftop Observation Deck",
           category: "Outdoor",
           desc: "A custom observatory offering 360-degree clifftop views, perfect for watching sunrises and sunset colors."
         },
         {
-          icon: <Compass className="w-5 h-5 text-[#E57A55]" />,
+          icon: <Compass className="w-5 h-5 text-[#ff6e00]" />,
           title: "The Punta Sur Cliff Edge",
           category: "Geography",
           desc: "Perched on Punta Sur, the southern peninsula of Isla Mujeres, surrounded by deep blue water on three sides."
@@ -79,13 +79,13 @@ export default function Amenities() {
       badgeSub2: "1600+ IPTV Channels",
       items: [
         {
-          icon: <Wifi className="w-5 h-5 text-[#E57A55]" />,
+          icon: <Wifi className="w-5 h-5 text-[#ff6e00]" />,
           title: "Starlink High-Speed Wi-Fi",
           category: "Utility",
           desc: "Ultra-fast Starlink wireless internet accessible throughout the villa, pool terrace, and rooftop deck."
         },
         {
-          icon: <Tv className="w-5 h-5 text-[#E57A55]" />,
+          icon: <Tv className="w-5 h-5 text-[#ff6e00]" />,
           title: "Premium 1600+ Channel TV",
           category: "Entertainment",
           desc: "Equipped with HBO, Showtime, global sports networks, and movie channels in the living spaces."
@@ -111,7 +111,7 @@ export default function Amenities() {
 
         {/* Category Badge */}
         <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-[#E3E0D8] rounded-full w-max mb-8 transition-transform hover:-translate-y-1 duration-300 cursor-default">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#E57A55] animate-pulse"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-[#ff6e00] animate-pulse"></span>
           <span className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#5A605C]">
             Exceptional Living
           </span>
@@ -120,7 +120,7 @@ export default function Amenities() {
         {/* Heading */}
         <h2 className="font-sans text-5xl sm:text-6xl lg:text-[80px] font-black uppercase tracking-tighter leading-[0.85] mb-8">
           Luxury Without <br />
-          <span className="text-[#E57A55]">Compromise</span>
+          <span className="text-[#ff6e00]">Compromise</span>
         </h2>
 
         {/* Blury Rounded Category Tabs */}
@@ -130,7 +130,7 @@ export default function Amenities() {
               key={cat.id}
               onClick={() => setActiveCategory(idx)}
               className={`px-6 py-3 rounded-full text-xs font-extrabold uppercase tracking-wider transition-all duration-300 backdrop-blur-md border cursor-pointer ${activeCategory === idx
-                ? 'bg-[#E57A55]/90 text-white border-[#E57A55] shadow-lg shadow-[#E57A55]/20 hover:bg-[#E57A55]'
+                ? 'bg-[#ff6e00]/90 text-white border-[#ff6e00] shadow-lg shadow-[#ff6e00]/20 hover:bg-[#ff6e00]'
                 : 'bg-[#E3E0D8]/40 hover:bg-[#E3E0D8]/70 text-[#2D332F] border-[#E3E0D8]/60'
                 }`}
             >
@@ -141,7 +141,7 @@ export default function Amenities() {
 
         {/* Active Category Meta */}
         <div className="mb-8">
-          <h3 className="font-sans text-xs uppercase tracking-[0.35em] text-[#E57A55] font-extrabold mb-2">
+          <h3 className="font-sans text-xs uppercase tracking-[0.35em] text-[#ff6e00] font-extrabold mb-2">
             {currentCat.heading}
           </h3>
           <p className="font-sans text-base sm:text-lg text-[#5A605C] leading-relaxed max-w-xl">
@@ -157,14 +157,14 @@ export default function Amenities() {
               className="flex items-start text-left py-6 border-b border-[#E3E0D8]/60 transition-all duration-300 group"
             >
               {/* Icon Accent */}
-              <div className="p-2.5 rounded-full border border-[#E3E0D8] bg-transparent group-hover:border-[#E57A55]/60 transition-all duration-300 mr-5 mt-0.5 shrink-0">
+              <div className="p-2.5 rounded-full border border-[#E3E0D8] bg-transparent group-hover:border-[#ff6e00]/60 transition-all duration-300 mr-5 mt-0.5 shrink-0">
                 {item.icon}
               </div>
 
               {/* Text Blocks */}
               <div className="flex-1">
                 <div className="flex items-baseline justify-between gap-4 mb-1">
-                  <h4 className="font-sans text-lg font-bold uppercase tracking-tight text-[#2D332F] group-hover:text-[#E57A55] transition-colors duration-300">
+                  <h4 className="font-sans text-lg font-bold uppercase tracking-tight text-[#2D332F] group-hover:text-[#ff6e00] transition-colors duration-300">
                     {item.title}
                   </h4>
                   <span className="text-[9px] uppercase tracking-widest text-[#8A908C] font-extrabold">
