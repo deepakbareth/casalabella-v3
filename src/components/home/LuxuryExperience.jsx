@@ -1,5 +1,5 @@
 import React from 'react';
-import imageHouse from '../assets/house.jpg';
+import imageHouse from '../../assets/house.jpg';
 
 export default function LuxuryExperience() {
   const stats = [

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Compass, MapPin, Sunset, Navigation } from 'lucide-react';
-import seaImg from '../assets/testimonials.jpg';
+import seaImg from '../../assets/testimonials.jpg';
 
 export default function LocationExperience() {
   const localAttractions = [

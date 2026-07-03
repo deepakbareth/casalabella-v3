@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
 // Import local assets
-import banner1 from '../assets/banner.jpg';
-import banner2 from '../assets/house.jpg';
-import banner3 from '../assets/banner3.jpg';
-import bedsea from '../assets/bedsea.jpg';
-import house from '../assets/house.jpg';
-import pool from '../assets/pool.jpg';
-import poolsea2 from '../assets/poolsea2.jpg';
+import banner1 from '../../assets/banner.jpg';
+import banner2 from '../../assets/house.jpg';
+import banner3 from '../../assets/banner3.jpg';
+import bedsea from '../../assets/bedsea.jpg';
+import house from '../../assets/house.jpg';
+import pool from '../../assets/pool.jpg';
+import poolsea2 from '../../assets/poolsea2.jpg';
 
 export default function ImmersiveGallery() {
   const [activeVibe, setActiveVibe] = useState('twilight');

@@ -1,33 +1,46 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import LuxuryExperience from './components/LuxuryExperience';
-import VillaHighlights from './components/VillaHighlights';
-import ImmersiveGallery from './components/ImmersiveGallery';
-import Amenities from './components/Amenities';
-import LocationExperience from './components/LocationExperience';
-import Testimonials from './components/Testimonials';
-import AvailabilityRates from './components/AvailabilityRates';
-import BookingInquiry from './components/BookingInquiry';
-import Footer from './components/Footer';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Home from './pages/home';
+import AboutPage from './pages/about';
+import Navbar from './layout/Navbar';
+import Footer from './layout/Footer';
+
+// Tiny helper component to handle smooth hash scrolling
+function ScrollToHashElement() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        const timer = setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+        return () => clearTimeout(timer);
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [hash]);
+
+  return null;
+}
 
 function App() {
   return (
-    <div className="min-h-screen bg-brand-cream text-brand-charcoal antialiased overflow-x-hidden">
+    <Router basename="/casalabella-v3">
+      <ScrollToHashElement />
       <Navbar />
-
-      <main>
-        <Hero />
-        <LuxuryExperience />
-        <Amenities />
-        <Testimonials />
-        <AvailabilityRates />
-        <BookingInquiry />
-      </main>
-
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
       <Footer />
-    </div>
+    </Router>
   );
 }
 
 export default App;
+
+

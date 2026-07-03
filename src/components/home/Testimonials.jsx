@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import guestImg from '../assets/testimonials.jpg';
+import guestImg from '../../assets/testimonials.jpg';
 
 export default function Testimonials() {
   const [activeIdx, setActiveIdx] = useState(0);

@@ -1,5 +1,5 @@
 import React from 'react';
-import viewImg from '../assets/pool.jpg';
+import viewImg from '../../assets/pool.jpg';
 
 export default function ViewHighlight() {
   return (

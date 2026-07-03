@@ -1,6 +1,6 @@
 import React from 'react';
-import bedsea from "../assets/bedsea.jpg";
-import poolsea2 from "../assets/poolsea2.jpg";
+import bedsea from "../../assets/bedsea.jpg";
+import poolsea2 from "../../assets/poolsea2.jpg";
 
 export default function DualImageHighlight() {
     return (

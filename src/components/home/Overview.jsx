@@ -1,6 +1,6 @@
 import React from 'react';
 import { BedDouble, Bath, Compass, Waves } from 'lucide-react';
-import pool from "../assets/house.jpg"
+import pool from "../../assets/house.jpg"
 
 export default function Overview() {
   const specs = [

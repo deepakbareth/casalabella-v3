@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Waves, Sunrise, Sparkles, Wifi, Compass, UtensilsCrossed, Tv, Wind } from 'lucide-react';
-import poolImg from '../assets/pool.jpg';
-import bedImg from '../assets/bedsea.jpg';
-import landscapeImg from '../assets/poolsea2.jpg';
+import poolImg from '../../assets/pool.jpg';
+import bedImg from '../../assets/bedsea.jpg';
+import landscapeImg from '../../assets/poolsea2.jpg';
 
 export default function Amenities() {
   const [activeCategory, setActiveCategory] = useState(0);

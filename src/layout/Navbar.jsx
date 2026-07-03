@@ -1,12 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Settings, User, Bell } from 'lucide-react';
+import { Menu, X, Phone, Settings, User } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState('The Villa');
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
-  const navLinks = ['The Villa', 'Highlights', 'Gallery', 'Amenities', 'Location', 'Reviews'];
+  const navLinks = [
+    { label: 'Home', to: '/' },
+    { label: 'About', to: '/about' },
+    { label: 'Gallery', to: '/#gallery' },
+    { label: 'Amenities', to: '/#amenities' },
+    { label: 'Reviews', to: '/#reviews' },
+    { label: 'Inquire', to: '/#inquire' }
+  ];
+
+  const isActive = (link) => {
+    if (link.to === '/') {
+      return location.pathname === '/' && !location.hash;
+    }
+    if (link.to.startsWith('/#')) {
+      return location.pathname === '/' && location.hash === link.to.substring(1);
+    }
+    return location.pathname === link.to;
+  };
 
   // Handle scroll detection for dynamic pill backgrounds
   useEffect(() => {
@@ -44,10 +62,9 @@ export default function Navbar() {
             ? 'bg-[#FFF0E4] shadow-md'
             : 'bg-black/40 backdrop-blur-md '
             }`}>
-            <a href="#" className={`font-serif italic text-2xl sm:text-3xl  font-bold  whitespace-nowrap normal-case ${scrolled ? 'text-black' : 'text-white'
-              }`}>
+            <Link to="/" className={`font-serif italic text-2xl sm:text-3xl font-bold whitespace-nowrap normal-case ${scrolled ? 'text-black' : 'text-white'}`}>
               Casa <span className="text-[#ff6e00]" >La Bella</span>
-            </a>
+            </Link>
           </div>
 
           {/* Center: Main Pill Navigation (Desktop) */}
@@ -56,37 +73,37 @@ export default function Navbar() {
             : 'bg-black/40 backdrop-blur-md '
             }`}>
             {navLinks.map((link) => (
-              <button
-                key={link}
-                onClick={() => setActiveTab(link)}
-                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${activeTab === link
+              <Link
+                key={link.label}
+                to={link.to}
+                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${isActive(link)
                   ? (scrolled ? 'bg-[#112828] text-[#FFF0E4] shadow-md' : 'bg-white/20 text-white shadow-md')
                   : (scrolled ? 'text-[#112828]/60 hover:text-[#112828] hover:bg-black/5' : 'text-white/100 hover:text-white hover:bg-white/10')
                   }`}
               >
-                {link}
-              </button>
+                {link.label}
+              </Link>
             ))}
           </nav>
 
           {/* Right: Actions / Icons (Desktop) */}
           <div className="hidden lg:flex items-center gap-3 pl-8 pointer-events-auto">
             {/* Setting / Inquire Pill */}
-            <button className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-500 ${scrolled
+            <Link to="/#inquire" className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-500 ${scrolled
               ? 'bg-[#FFF0E4] text-[#112828] hover:bg-white shadow-lg'
               : 'bg-black/40 backdrop-blur-md text-white '
               }`}>
               <Settings className={`w-4 h-4 transition-colors duration-500 ${scrolled ? 'text-[#112828]/70' : 'text-white/70'}`} />
               Inquire
-            </button>
+            </Link>
 
             {/* Phone Circle */}
-            <button className={`w-11 h-11 flex items-center justify-center rounded-full transition-all duration-500 ${scrolled
+            <a href="tel:+19703908874" className={`w-11 h-11 flex items-center justify-center rounded-full transition-all duration-500 ${scrolled
               ? 'bg-[#FFF0E4] text-[#112828] hover:bg-white shadow-lg'
               : 'bg-black/40 backdrop-blur-md text-white border border-white/10 hover:bg-white/20'
               }`}>
               <Phone className={`w-4 h-4 transition-colors duration-500 ${scrolled ? 'text-[#112828]/70' : 'text-white/70'}`} />
-            </button>
+            </a>
 
             {/* Profile Circle */}
             <button className={`w-11 h-11 flex items-center justify-center rounded-full transition-all duration-500 ${scrolled
@@ -128,28 +145,28 @@ export default function Navbar() {
 
         <nav className="flex flex-col gap-3 sm:gap-4 max-w-sm mx-auto w-full mt-8">
           {navLinks.map((link) => (
-            <button
-              key={link}
+            <Link
+              key={link.label}
+              to={link.to}
               onClick={() => {
-                setActiveTab(link);
                 setIsOpen(false);
               }}
-              className={`px-5 py-3 sm:px-6 sm:py-4 rounded-full text-base sm:text-lg font-medium transition-all duration-300 text-center ${activeTab === link
+              className={`px-5 py-3 sm:px-6 sm:py-4 rounded-full text-base sm:text-lg font-medium transition-all duration-300 text-center ${isActive(link)
                 ? 'bg-[#FFF0E4] text-[#112828]'
                 : 'text-[#FFF0E4]/60 border border-[#FFF0E4]/20 hover:text-[#FFF0E4]'
                 }`}
             >
-              {link}
-            </button>
+              {link.label}
+            </Link>
           ))}
 
           <div className="flex gap-3 sm:gap-4 mt-6 sm:mt-8">
-            <button className="flex-1 flex items-center justify-center gap-2 bg-[#ff6e00] text-[#FFF0E4] px-4 py-3 sm:px-6 sm:py-4 rounded-full text-sm sm:text-base font-medium active:scale-95 transition-transform">
+            <Link to="/#inquire" onClick={() => setIsOpen(false)} className="flex-1 flex items-center justify-center gap-2 bg-[#ff6e00] text-[#FFF0E4] px-4 py-3 sm:px-6 sm:py-4 rounded-full text-sm sm:text-base font-medium active:scale-95 transition-transform">
               <Settings className="w-4 h-4 sm:w-5 sm:h-5" /> Inquire
-            </button>
-            <button className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 bg-[#FFF0E4]/10 text-[#FFF0E4] flex items-center justify-center rounded-full border border-[#FFF0E4]/20 active:scale-95 transition-transform">
+            </Link>
+            <a href="tel:+19703908874" className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 bg-[#FFF0E4]/10 text-[#FFF0E4] flex items-center justify-center rounded-full border border-[#FFF0E4]/20 active:scale-95 transition-transform">
               <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
-            </button>
+            </a>
           </div>
         </nav>
       </div>
