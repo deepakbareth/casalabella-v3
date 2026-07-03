@@ -47,11 +47,11 @@ export default function VillaOverview() {
             <div className="grid grid-cols-2 gap-4">
               <div className="p-6 bg-[#E3E0D8]/40 rounded-2xl border border-[#E3E0D8]">
                 <span className="block font-sans text-4xl lg:text-5xl font-extrabold text-[#ff6e00] tracking-tight">4</span>
-                <span className="text-xs uppercase tracking-widest text-[#5A605C] font-semibold mt-1 block">Bedrooms</span>
+                <span className="text-sm uppercase tracking-widest text-[#5A605C] font-semibold mt-1 block">Bedrooms</span>
               </div>
               <div className="p-6 bg-[#E3E0D8]/40 rounded-2xl border border-[#E3E0D8]">
                 <span className="block font-sans text-4xl lg:text-5xl font-extrabold text-[#ff6e00] tracking-tight">4.5</span>
-                <span className="text-xs uppercase tracking-widest text-[#5A605C] font-semibold mt-1 block">Bathrooms</span>
+                <span className="text-sm uppercase tracking-widest text-[#5A605C] font-semibold mt-1 block">Bathrooms</span>
               </div>
             </div>
           </div>
@@ -59,7 +59,7 @@ export default function VillaOverview() {
           {/* Right Column: Spec Descriptions */}
           <div className="lg:col-span-7 space-y-8 lg:mt-4">
             <p className="font-sans text-[#5A605C] leading-relaxed text-base sm:text-lg">
-              Designed as a modern sanctuary, Casa La Bella blends raw structural excellence with fluid indoor-outdoor living. Every architectural detail serves to frame the majestic sea, providing absolute privacy while capturing the cool offshore breezes.
+              The finishes of the villa are impeccable with marble and granite throughout. Outside, the infinity pool creates a mirage of blue flowing water across the Caribbean to the coastline of Cancun. For complete peace of mind, the home includes a full house generator assuring that you will never be without power or internet, and our prices include all fees with no hidden fees.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
@@ -71,7 +71,7 @@ export default function VillaOverview() {
                   <h4 className="font-sans font-bold text-sm uppercase tracking-wider text-[#2D332F]">
                     {item.title}
                   </h4>
-                  <p className="font-sans text-xs text-[#5A605C] leading-relaxed">
+                  <p className="font-sans text-base text-[#5A605C] leading-relaxed">
                     {item.desc}
                   </p>
                 </div>

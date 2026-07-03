@@ -34,7 +34,7 @@ export default function AboutHero() {
           {/* Right Column: Description */}
           <div className="lg:col-span-5 lg:pt-3 border-l-2 border-[#ff6e00] pl-6 lg:pl-8">
             <p className="font-sans text-base sm:text-lg text-[#5A605C] leading-relaxed font-normal">
-              Casa La Bella is a private clifftop retreat positioned on the edge of Punta Sur. Surrounded by water on three sides, the estate is meticulously designed to offer complete seclusion, panoramic sunrises over the open sea, and sunsets facing the Cancun coastline.
+              Casa La Bella, our beautiful home located in Garrafon Park, Punta Sur, Isla Mujeres. This spectacular home is surrounded by the ocean on all three sides offering sunrise views from the rooftop privacy deck or sunsets from the poolside patio. It has all of the amenities to make your vacation private, peaceful and relaxing.
             </p>
           </div>
         </div>

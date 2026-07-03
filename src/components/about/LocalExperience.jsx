@@ -29,15 +29,15 @@ export default function LocalExperience() {
     <section className="py-20 lg:py-32 bg-[#F7F5F0] text-[#2D332F]">
       <div className="max-w-7xl mx-auto px-6 sm:px-12">
         {/* Header */}
-        <div className="max-w-2xl mb-16">
+        <div className="max-w-4xl mb-16">
           <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#ff6e00] block mb-3">
             Local Setting
           </span>
           <h2 className="font-sans text-4xl sm:text-5xl font-black uppercase tracking-tighter text-[#2D332F] leading-none">
             The Magic of Punta Sur
           </h2>
-          <p className="font-sans text-sm text-[#5A605C] leading-relaxed mt-4">
-            Located on a quiet waterfront segment, Casa La Bella offers the rare combination of absolute tranquility on the clifftops and convenient access to local treasures.
+          <p className="font-sans text-base text-[#5A605C] leading-relaxed mt-4">
+            The natural beauty, abundant wildlife and year round great weather offers you a getaway second to none. Isla is a charming island with great character. The restaurants offer a variety of international flavors: Italian, French, Caribbean, Cuban, Mexican and American. A vibrant downtown is just a ten minute cab ride away. Great food, shopping and nightlife when you want it and peace and quiet whenever. With snorkeling, diving, great fishing, beautiful white sandy beaches and locals that truly are glad you are there will make your vacation one to remember.
           </p>
         </div>
 
@@ -55,7 +55,7 @@ export default function LocalExperience() {
                 <h4 className="font-sans font-bold text-sm uppercase tracking-wider text-[#2D332F]">
                   {item.title}
                 </h4>
-                <p className="font-sans text-xs text-[#5A605C] leading-relaxed">
+                <p className="font-sans text-sm text-[#5A605C] leading-relaxed">
                   {item.desc}
                 </p>
               </div>

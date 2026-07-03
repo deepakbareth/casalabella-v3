@@ -18,8 +18,8 @@ export default function OwnerStory() {
               </h2>
             </div>
             
-            <p className="font-sans text-sm text-[#5A605C] leading-relaxed">
-              Rick Cuny (based in Vail, Colorado) designed and co-built Casa La Bella in 2003 alongside two close friends. Over the years, Rick became the sole proprietor and has personally directed every upgrade—from modern architectural revamps to installing the commercial back-up generator system and Starlink connectivity.
+            <p className="font-sans text-base text-[#5A605C] leading-relaxed">
+              Casa La Bella, whether you want a family vacation, a fun trip with friends or a romantic getaway, this is a destination you will never forget. Designed and co-built in 2003 by owner Rick Cuny (based in Vail, Colorado), the home has been personally maintained and upgraded to offer seamless clifftop luxury.
             </p>
 
             {/* Direct Booking Promo Badge */}
@@ -27,7 +27,7 @@ export default function OwnerStory() {
               <h4 className="font-sans font-bold text-xs uppercase tracking-wider text-[#ff6e00] mb-2">
                 Book Directly & Save
               </h4>
-              <p className="font-sans text-xs text-[#5A605C] leading-relaxed">
+              <p className="font-sans text-base text-[#5A605C] leading-relaxed">
                 By booking directly through Rick, guests bypass third-party service fees and enjoy flexible reservation terms.
               </p>
             </div>
@@ -39,7 +39,7 @@ export default function OwnerStory() {
               <h3 className="font-sans font-black text-lg uppercase tracking-tight text-[#2D332F]">
                 A "User-Friendly" Sanctuary
               </h3>
-              <p className="font-sans text-sm text-[#5A605C] leading-relaxed">
+              <p className="font-sans text-base text-[#5A605C] leading-relaxed">
                 Rick’s philosophy has always been to make the estate as user-friendly and reliable as a five-star resort, while preserving the soul of a private coastal home. Guests deal directly with Rick during the inquiry and booking process, ensuring complete clarity and personalized attention for every stay.
               </p>
             </div>
@@ -59,8 +59,8 @@ export default function OwnerStory() {
                     <Phone className="w-4 h-4 text-[#007979]" />
                   </div>
                   <div>
-                    <span className="block text-[10px] uppercase font-bold text-[#8A908C]">Phone & Text</span>
-                    <span className="text-xs font-semibold text-[#2D332F]">+1-970-390-8874</span>
+                    <span className="block text-xs uppercase font-bold text-[#8A908C]">Phone & Text</span>
+                    <span className="text-sm font-semibold text-[#2D332F]">+1-970-390-8874</span>
                   </div>
                 </a>
 
@@ -72,8 +72,8 @@ export default function OwnerStory() {
                     <Mail className="w-4 h-4 text-[#ff6e00]" />
                   </div>
                   <div>
-                    <span className="block text-[10px] uppercase font-bold text-[#8A908C]">Email Address</span>
-                    <span className="text-xs font-semibold text-[#2D332F]">vailcuny@gmail.com</span>
+                    <span className="block text-xs uppercase font-bold text-[#8A908C]">Email Address</span>
+                    <span className="text-sm font-semibold text-[#2D332F]">vailcuny@gmail.com</span>
                   </div>
                 </a>
               </div>
