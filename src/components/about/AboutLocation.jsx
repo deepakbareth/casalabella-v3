@@ -29,7 +29,7 @@ export default function AboutLocation() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
-        
+
         {/* Header */}
         <div className="max-w-4xl mb-12 lg:mb-16">
           <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#ff6e00] block mb-3">
@@ -45,15 +45,15 @@ export default function AboutLocation() {
 
         {/* Layout: Map on left, Lists on right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
+
           {/* Map Column (6 columns) */}
-          <div className="lg:col-span-6 h-[350px] sm:h-[450px] lg:h-[500px] rounded-3xl overflow-hidden border border-[#E3E0D8] shadow-lg relative bg-[#e5e3df]">
-            <iframe 
-              src="https://maps.google.com/maps?q=21.2064,-86.7176&z=14&output=embed" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen="" 
+          <div className="lg:col-span-6 h-[350px] sm:h-[350px] rounded-3xl overflow-hidden border border-[#E3E0D8] shadow-lg relative bg-[#e5e3df]">
+            <iframe
+              src="https://maps.google.com/maps?q=21.2064,-86.7176&z=14&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
               loading="lazy"
               title="Casa La Bella neighborhood map"
             ></iframe>
@@ -62,7 +62,7 @@ export default function AboutLocation() {
           {/* Details Column (6 columns) */}
           <div className="lg:col-span-6 space-y-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              
+
               {/* What's Nearby list */}
               <div className="space-y-4">
                 <h3 className="font-sans font-bold text-xs uppercase tracking-wider text-[#2D332F] flex items-center gap-2 pb-2 border-b border-[#E3E0D8]">

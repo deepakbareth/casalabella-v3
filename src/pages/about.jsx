@@ -6,6 +6,7 @@ import BedroomsBathrooms from '../components/about/BedroomsBathrooms';
 import AboutLocation from '../components/about/AboutLocation';
 import OwnerStory from '../components/about/OwnerStory';
 import LocalExperience from '../components/about/LocalExperience';
+import HousePolicies from '../components/about/HousePolicies';
 import houseImg from '../assets/house.jpg';
 
 export default function AboutPage() {
@@ -16,9 +17,11 @@ export default function AboutPage() {
         <AboutHero />
         <VillaOverview />
         <BedroomsBathrooms />
-        {/* <AboutLocation />
+        <AboutLocation />
         <OwnerStory />
-        <LocalExperience /> */}
+        <LocalExperience />
+
+        <HousePolicies />
       </main>
     </div>
   );

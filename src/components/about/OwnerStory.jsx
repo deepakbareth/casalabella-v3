@@ -6,20 +6,24 @@ export default function OwnerStory() {
     <section className="py-20 lg:py-28 bg-[#F7F5F0] text-[#2D332F] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-          
+
           {/* Left Column: Vision & Host Card */}
           <div className="lg:col-span-5 space-y-6">
             <div>
               <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#ff6e00] block mb-3">
                 Original Owner
               </span>
-              <h2 className="font-sans text-4xl sm:text-5xl font-black uppercase tracking-tighter text-[#2D332F] leading-none">
-                Crafted by Rick Cuny
+              <h2
+                className="font-sans text-4xl sm:text-5xl font-black uppercase tracking-tighter text-[#2D332F] leading-none">
+                Crafted by <br /> <span
+                  className="font-sans text-4xl sm:text-5xl font-black uppercase tracking-tighter text-[#ff6e00] leading-none"
+
+                > Rick Cuny</span>
               </h2>
             </div>
-            
+
             <p className="font-sans text-base text-[#5A605C] leading-relaxed">
-              Casa La Bella, whether you want a family vacation, a fun trip with friends or a romantic getaway, this is a destination you will never forget. Designed and co-built in 2003 by owner Rick Cuny (based in Vail, Colorado), the home has been personally maintained and upgraded to offer seamless clifftop luxury.
+              Casa La Bella, whether you want a family vacation, a fun trip with friends or a romantic getaway, this is a destination you will never forget. The home has been personally maintained and upgraded to offer seamless clifftop luxury.
             </p>
 
             {/* Direct Booking Promo Badge */}
@@ -49,10 +53,10 @@ export default function OwnerStory() {
               <h4 className="font-sans font-bold text-xs uppercase tracking-wider text-[#2D332F] mb-4">
                 Connect Directly with Rick
               </h4>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <a 
-                  href="tel:+19703908874" 
+                <a
+                  href="tel:+19703908874"
                   className="flex items-center gap-4 p-4 bg-[#E3E0D8]/20 border border-[#E3E0D8] rounded-xl transition-colors hover:bg-[#E3E0D8]/40"
                 >
                   <div className="w-10 h-10 rounded-full bg-[#007979]/10 flex items-center justify-center flex-shrink-0">
@@ -64,8 +68,8 @@ export default function OwnerStory() {
                   </div>
                 </a>
 
-                <a 
-                  href="mailto:vailcuny@gmail.com" 
+                <a
+                  href="mailto:vailcuny@gmail.com"
                   className="flex items-center gap-4 p-4 bg-[#E3E0D8]/20 border border-[#E3E0D8] rounded-xl transition-colors hover:bg-[#E3E0D8]/40"
                 >
                   <div className="w-10 h-10 rounded-full bg-[#ff6e00]/10 flex items-center justify-center flex-shrink-0">

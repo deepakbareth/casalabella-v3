@@ -26,7 +26,7 @@ export default function LocalExperience() {
   ];
 
   return (
-    <section className="py-20 lg:py-32 bg-[#F7F5F0] text-[#2D332F]">
+    <section className="py-20 lg:py-28 bg-[#F7F5F0] text-[#2D332F]">
       <div className="max-w-7xl mx-auto px-6 sm:px-12">
         {/* Header */}
         <div className="max-w-4xl mb-16">
@@ -44,8 +44,8 @@ export default function LocalExperience() {
         {/* Local Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {attractions.map((item, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className="p-6 bg-[#E3E0D8]/20 border border-[#E3E0D8] rounded-2xl flex flex-col justify-between"
             >
               <div className="space-y-4">
@@ -63,6 +63,9 @@ export default function LocalExperience() {
           ))}
         </div>
       </div>
+
+      {/* Divider */}
+      <div className="absolute bottom-0 left-0 right-0 border-b border-[#E3E0D8] mx-6 sm:mx-12"></div>
     </section>
   );
 }
