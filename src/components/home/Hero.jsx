@@ -33,9 +33,11 @@ export default function Hero() {
           </div>
 
           {/* Heavy Broad Heading */}
-          <h1 className="font-sans text-5xl sm:text-7xl lg:text-[130px] font-black uppercase tracking-tighter leading-[0.95] lg:leading-[0.85] text-[#F7F5F0] mb-5 lg:mb-8">
-            Casa <br />
-            <span className="text-[#ff6e00]">La Bella</span>
+          <h1 className="font-sans text-3xl sm:text-6xl  font-black uppercase tracking-tighter leading-[0.95] lg:leading-[0.85] text-[#F7F5F0] mb-5 lg:mb-8">
+            <span className="text-[#ff6e00] text-4xl sm:text-8xl">Casa la bella</span><br />
+            <span className=' text-3xl sm:text-5xl'> luxury oceanfront </span><br />
+            <span className='text-3xl sm:text-5xl'> vacation rental on Punta</span>
+
           </h1>
 
           {/* Description */}
