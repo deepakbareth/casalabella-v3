@@ -2,7 +2,9 @@ import React, { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './layout/Navbar';
 import Footer from './layout/Footer';
-import PageSkeleton from './layout/PageSkeleton';
+import HomeSkeleton from './layout/HomeSkeleton';
+import AboutSkeleton from './layout/AboutSkeleton';
+import GallerySkeleton from './layout/GallerySkeleton';
 
 // Lazily load page components to improve initial page load performance
 const Home = lazy(() => import('./pages/home'));
@@ -36,13 +38,32 @@ function App() {
     <Router basename="/casalabella-v3">
       <ScrollToHashElement />
       <Navbar />
-      <Suspense fallback={<PageSkeleton />}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
-        </Routes>
-      </Suspense>
+      <Routes>
+        <Route 
+          path="/" 
+          element={
+            <Suspense fallback={<HomeSkeleton />}>
+              <Home />
+            </Suspense>
+          } 
+        />
+        <Route 
+          path="/about" 
+          element={
+            <Suspense fallback={<AboutSkeleton />}>
+              <AboutPage />
+            </Suspense>
+          } 
+        />
+        <Route 
+          path="/gallery" 
+          element={
+            <Suspense fallback={<GallerySkeleton />}>
+              <GalleryPage />
+            </Suspense>
+          } 
+        />
+      </Routes>
       <Footer />
     </Router>
   );

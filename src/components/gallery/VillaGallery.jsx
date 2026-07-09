@@ -145,7 +145,7 @@ export default function VillaGallery() {
             <div
               key={img.id}
               onClick={() => setActiveImageIndex(idx)}
-              className="group p-2 bg-white border border-[#E3E0D8] rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 ease-out cursor-pointer transform hover:-translate-y-1 relative opacity-0 translate-y-4 scale-[0.98] animate-card-fade-in"
+              className="group p-2 bg-white border border-[#E3E0D8] rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 ease-out cursor-pointer transform hover:-translate-y-1 relative opacity-0 translate-y-1 scale-[0.98] animate-card-fade-in"
               style={{ animationDelay: `${(idx % 12) * 80}ms` }}
             >
               {/* Image Container with aspect ratio */}
@@ -265,11 +265,7 @@ export default function VillaGallery() {
               ))}
             </div>
 
-            <div className="text-center">
-              <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/10 text-white/80 font-sans text-[10px] uppercase tracking-wider font-extrabold">
-                Use arrows, click thumbnails, or use left/right keyboard keys to explore
-              </span>
-            </div>
+
 
           </div>
 
