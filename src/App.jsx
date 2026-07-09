@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Home from './pages/home';
-import AboutPage from './pages/about';
 import Navbar from './layout/Navbar';
 import Footer from './layout/Footer';
-import GalleryPage from './pages/gallery';
+import PageSkeleton from './layout/PageSkeleton';
+
+// Lazily load page components to improve initial page load performance
+const Home = lazy(() => import('./pages/home'));
+const AboutPage = lazy(() => import('./pages/about'));
+const GalleryPage = lazy(() => import('./pages/gallery'));
 
 // Tiny helper component to handle smooth hash scrolling
 function ScrollToHashElement() {
@@ -33,11 +36,13 @@ function App() {
     <Router basename="/casalabella-v3">
       <ScrollToHashElement />
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/gallery" element={<GalleryPage />} />
-      </Routes>
+      <Suspense fallback={<PageSkeleton />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+        </Routes>
+      </Suspense>
       <Footer />
     </Router>
   );
