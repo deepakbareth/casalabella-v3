@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // Import local assets
 import banner1 from '../../assets/banner.jpg';
@@ -76,7 +77,7 @@ export default function ImmersiveGallery() {
           {vibes.map((v) => (
             <button
               key={v.id}
-              // onClick={() => setActiveVibe(v.id)}
+              onClick={() => setActiveVibe(v.id)}
               className={`flex items-start text-left py-6 border-b border-[#E3E0D8]/60 transition-all duration-300 group cursor-pointer ${activeVibe === v.id ? 'pl-4' : 'hover:pl-2'
                 }`}
             >
@@ -110,6 +111,16 @@ export default function ImmersiveGallery() {
               </div>
             </button>
           ))}
+        </div>
+
+        {/* View All Photos Button */}
+        <div className="mt-8">
+          <Link 
+            to="/gallery"
+            className="inline-flex items-center justify-center px-8 py-3.5 bg-[#2D332F] text-white font-sans text-xs uppercase tracking-widest font-extrabold rounded-full hover:bg-[#ff6e00] transition-colors duration-300 shadow-md hover:shadow-lg cursor-pointer"
+          >
+            View All 49 Photos
+          </Link>
         </div>
 
       </div>

@@ -4,6 +4,7 @@ import Home from './pages/home';
 import AboutPage from './pages/about';
 import Navbar from './layout/Navbar';
 import Footer from './layout/Footer';
+import GalleryPage from './pages/gallery';
 
 // Tiny helper component to handle smooth hash scrolling
 function ScrollToHashElement() {
@@ -35,6 +36,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
       </Routes>
       <Footer />
     </Router>
