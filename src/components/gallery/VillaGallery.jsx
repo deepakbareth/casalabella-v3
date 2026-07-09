@@ -145,7 +145,8 @@ export default function VillaGallery() {
             <div
               key={img.id}
               onClick={() => setActiveImageIndex(idx)}
-              className="group p-2 bg-white border border-[#E3E0D8] rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 ease-out cursor-pointer transform hover:-translate-y-1 relative"
+              className="group p-2 bg-white border border-[#E3E0D8] rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 ease-out cursor-pointer transform hover:-translate-y-1 relative opacity-0 translate-y-4 scale-[0.98] animate-card-fade-in"
+              style={{ animationDelay: `${(idx % 12) * 80}ms` }}
             >
               {/* Image Container with aspect ratio */}
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#E3E0D8]/20">
@@ -274,6 +275,21 @@ export default function VillaGallery() {
 
         </div>
       )}
+      <style>{`
+        @keyframes cardFadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(16px) scale(0.98);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+        .animate-card-fade-in {
+          animation: cardFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+      `}</style>
     </section>
   );
 }
