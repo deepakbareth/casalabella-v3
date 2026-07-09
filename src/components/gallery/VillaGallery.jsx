@@ -12,7 +12,7 @@ const allGalleryImages = Object.keys(galleryModules)
   .sort((a, b) => a.num - b.num);
 
 // Helper list of actual numerical filename numbers that represent exterior shots
-const exteriorIndices = [1, 2, 3, 4, 5, 8, 9, 10, 12, 20, 34, 44, 45, 46, 48, 49];
+const exteriorIndices = [1, 2, 3, 4, 5, 8, 9, 10, 12, 20, 24, 34, 44, 45, 46, 48, 49];
 
 export default function VillaGallery() {
   const [activeCategory, setActiveCategory] = useState('all');

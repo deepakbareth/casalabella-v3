@@ -2,6 +2,7 @@ import React from 'react';
 import PageBanner from '../components/PageBanner';
 import VillaGallery from '../components/gallery/VillaGallery';
 import houseImg from '../assets/house.jpg';
+// import houseImg from '../assets/gallerybanner.jpg';
 
 export default function GalleryPage() {
   return (
