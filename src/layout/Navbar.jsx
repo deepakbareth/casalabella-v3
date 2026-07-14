@@ -12,7 +12,7 @@ export default function Navbar() {
     { label: 'About', to: '/about' },
     { label: 'Gallery', to: '/gallery' },
     { label: 'Amenities', to: '/amenities' },
-    { label: 'Reviews', to: '/#reviews' },
+    { label: 'Reviews', to: '/reviews' },
     { label: 'Inquire', to: '/#inquire' }
   ];
 

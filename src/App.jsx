@@ -6,12 +6,14 @@ import HomeSkeleton from './layout/HomeSkeleton';
 import AboutSkeleton from './layout/AboutSkeleton';
 import GallerySkeleton from './layout/GallerySkeleton';
 import AmenitiesSkeleton from './layout/AmenitiesSkeleton';
+import ReviewsSkeleton from './layout/ReviewsSkeleton';
 
 // Lazily load page components to improve initial page load performance
 const Home = lazy(() => import('./pages/home'));
 const AboutPage = lazy(() => import('./pages/about'));
 const GalleryPage = lazy(() => import('./pages/gallery'));
 const AmenitiesPage = lazy(() => import('./pages/amenities'));
+const ReviewsPage = lazy(() => import('./pages/reviews'));
 
 // Tiny helper component to handle smooth hash scrolling
 function ScrollToHashElement() {
@@ -70,6 +72,14 @@ function App() {
           element={
             <Suspense fallback={<AmenitiesSkeleton />}>
               <AmenitiesPage />
+            </Suspense>
+          } 
+        />
+        <Route 
+          path="/reviews" 
+          element={
+            <Suspense fallback={<ReviewsSkeleton />}>
+              <ReviewsPage />
             </Suspense>
           } 
         />
