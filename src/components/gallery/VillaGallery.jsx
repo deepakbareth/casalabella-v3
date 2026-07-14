@@ -175,6 +175,17 @@ export default function VillaGallery() {
             <div
               key={img.id}
               onClick={() => setActiveImageIndex(idx)}
+              onMouseEnter={(e) => {
+                const video = e.currentTarget.querySelector('video');
+                if (video) video.play().catch(() => {});
+              }}
+              onMouseLeave={(e) => {
+                const video = e.currentTarget.querySelector('video');
+                if (video) {
+                  video.pause();
+                  video.currentTime = 0; // Reset to first frame when cursor leaves
+                }
+              }}
               className="group p-2 bg-white border border-[#E3E0D8] rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 ease-out cursor-pointer transform hover:-translate-y-1 relative opacity-0 translate-y-1 scale-[0.98] animate-card-fade-in"
               style={{ animationDelay: `${(idx % 12) * 80}ms` }}
             >
@@ -199,7 +210,6 @@ export default function VillaGallery() {
                       muted
                       playsInline
                       loop
-                      autoPlay
                       onLoadedData={() => handleMediaLoad(img.id)}
                       className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105 animate-gentle-fade-in"
                     />
