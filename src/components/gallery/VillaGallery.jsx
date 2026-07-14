@@ -11,6 +11,16 @@ const allGalleryImages = Object.keys(galleryModules)
   })
   .sort((a, b) => a.num - b.num);
 
+// Vite helper to dynamically load and sort all videos in the galleryvideos folder (gv1...)
+const videoModules = import.meta.glob('../../assets/galleryvideos/*.{mp4,webm,mov,MOV,MP4,WEBM}', { eager: true });
+const allGalleryVideos = Object.keys(videoModules)
+  .map(key => {
+    const match = key.match(/gv(\d+)\./i);
+    const num = match ? parseInt(match[1], 10) : 999;
+    return { num, src: videoModules[key].default || videoModules[key] };
+  })
+  .sort((a, b) => a.num - b.num);
+
 // Helper list of actual numerical filename numbers that represent exterior shots
 const exteriorIndices = [1, 2, 3, 4, 5, 8, 9, 10, 12, 20, 24, 34, 44, 45, 46, 48, 49];
 
@@ -23,18 +33,30 @@ export default function VillaGallery() {
   const [loadedImages, setLoadedImages] = useState({});
   const thumbnailContainerRef = useRef(null);
 
-  // Load all images and categorize them
+  // Load all images/videos and categorize them
   useEffect(() => {
-    const mapped = allGalleryImages.map((imgObj, index) => {
+    const mappedImages = allGalleryImages.map((imgObj, index) => {
       const isExterior = exteriorIndices.includes(imgObj.num);
       return {
-        id: index,
+        id: `img-${imgObj.num}-${index}`,
         src: imgObj.src,
+        type: 'image',
         category: isExterior ? 'exterior' : 'interior',
         alt: `Casa La Bella View ${imgObj.num}`
       };
     });
-    setImages(mapped);
+
+    const mappedVideos = allGalleryVideos.map((vidObj, index) => {
+      return {
+        id: `vid-${vidObj.num}-${index}`,
+        src: vidObj.src,
+        type: 'video',
+        category: 'videos',
+        alt: `Casa La Bella Tour Video ${vidObj.num}`
+      };
+    });
+
+    setImages([...mappedImages, ...mappedVideos]);
   }, []);
 
   // Handle filtering
@@ -87,7 +109,7 @@ export default function VillaGallery() {
     setVisibleCount((prev) => Math.min(prev + 12, filteredImages.length));
   };
 
-  const handleImageLoad = (id) => {
+  const handleMediaLoad = (id) => {
     setLoadedImages(prev => ({ ...prev, [id]: true }));
   };
 
@@ -121,9 +143,10 @@ export default function VillaGallery() {
         <div className="flex justify-center">
           <div className="inline-flex items-center p-1.5 bg-white/70 backdrop-blur-md border border-[#E3E0D8] rounded-full shadow-sm">
             {[
-              { id: 'all', label: 'All Photos' },
+              { id: 'all', label: 'All Media' },
               { id: 'exterior', label: 'Exterior & Pools' },
-              { id: 'interior', label: 'Interior & Living' }
+              { id: 'interior', label: 'Interior & Living' },
+              { id: 'videos', label: 'Videos' }
             ].map(cat => (
               <button
                 key={cat.id}
@@ -139,8 +162,16 @@ export default function VillaGallery() {
           </div>
         </div>
 
-        {/* Dynamic Image Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        {/* Dynamic Image & Video Grid */}
+        <div className={`grid gap-8 justify-center mx-auto ${
+          filteredImages.slice(0, visibleCount).length === 1
+            ? 'grid-cols-1 max-w-sm'
+            : filteredImages.slice(0, visibleCount).length === 2
+            ? 'grid-cols-1 sm:grid-cols-2 max-w-2xl'
+            : filteredImages.slice(0, visibleCount).length === 3
+            ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-5xl'
+            : 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full'
+        }`}>
           {filteredImages.slice(0, visibleCount).map((img, idx) => (
             <div
               key={img.id}
@@ -148,7 +179,7 @@ export default function VillaGallery() {
               className="group p-2 bg-white border border-[#E3E0D8] rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 ease-out cursor-pointer transform hover:-translate-y-1 relative opacity-0 translate-y-1 scale-[0.98] animate-card-fade-in"
               style={{ animationDelay: `${(idx % 12) * 80}ms` }}
             >
-              {/* Image Container with aspect ratio */}
+              {/* Media Container with aspect ratio */}
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#E3E0D8]/20">
                 {/* Skeleton Loader */}
                 {!loadedImages[img.id] && (
@@ -156,14 +187,34 @@ export default function VillaGallery() {
                     <span className="w-1.5 h-1.5 rounded-full bg-[#ff6e00]/50 animate-ping"></span>
                   </div>
                 )}
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  onLoad={() => handleImageLoad(img.id)}
-                  className={`w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105 ${loadedImages[img.id] ? 'opacity-100' : 'opacity-0'
-                    }`}
-                  loading="lazy"
-                />
+
+                {img.type === 'video' ? (
+                  <>
+                    {/* Corner Video Badge overlay */}
+                    <div className="absolute top-3 right-3 z-10 px-2 py-1 bg-black/60 backdrop-blur-md rounded-lg text-white text-[9px] uppercase tracking-wider font-extrabold flex items-center gap-1 border border-white/10">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#ff6e00] animate-pulse"></span>
+                      Video
+                    </div>
+                    <video
+                      src={img.src}
+                      muted
+                      playsInline
+                      loop
+                      autoPlay
+                      onLoadedData={() => handleMediaLoad(img.id)}
+                      className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105 animate-gentle-fade-in"
+                    />
+                  </>
+                ) : (
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    onLoad={() => handleMediaLoad(img.id)}
+                    className={`w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105 ${loadedImages[img.id] ? 'opacity-100' : 'opacity-0'
+                      }`}
+                    loading="lazy"
+                  />
+                )}
 
                 {/* Hover Glass Overlay */}
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -183,7 +234,7 @@ export default function VillaGallery() {
               onClick={loadMore}
               className="px-10 py-4 bg-[#2D332F] text-white font-sans text-xs uppercase tracking-widest font-extrabold rounded-full hover:bg-[#ff6e00] transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer transform hover:-translate-y-0.5"
             >
-              Load More Photos ({filteredImages.length - visibleCount} remaining)
+              Load More ({filteredImages.length - visibleCount} remaining)
             </button>
           </div>
         )}
@@ -199,7 +250,7 @@ export default function VillaGallery() {
           {/* Lightbox Header */}
           <div className="flex justify-between items-center w-full max-w-7xl mx-auto py-2 z-50">
             <span className="font-sans text-xs font-bold text-white/70 tracking-wider">
-              {filteredImages[activeImageIndex].category.toUpperCase()} • PHOTO {activeImageIndex + 1} OF {filteredImages.length}
+              {filteredImages[activeImageIndex].type.toUpperCase()} • {activeImageIndex + 1} OF {filteredImages.length}
             </span>
             <button
               onClick={() => setActiveImageIndex(null)}
@@ -220,15 +271,26 @@ export default function VillaGallery() {
               <ChevronLeft className="w-6 h-6" />
             </button>
 
-            {/* Central Display Image */}
+            {/* Central Display Media */}
             <div className="max-h-[60vh] sm:max-h-[65vh] w-full flex items-center justify-center overflow-hidden">
-              <img
-                key={activeImageIndex}
-                src={filteredImages[activeImageIndex].src}
-                alt="Casa La Bella Fullscreen View"
-                className="max-h-[60vh] sm:max-h-[65vh] max-w-full object-contain rounded-2xl border border-white/10 shadow-2xl select-none animate-gentle-fade-in"
-                onClick={(e) => e.stopPropagation()}
-              />
+              {filteredImages[activeImageIndex].type === 'video' ? (
+                <video
+                  key={activeImageIndex}
+                  src={filteredImages[activeImageIndex].src}
+                  controls
+                  autoPlay
+                  className="max-h-[60vh] sm:max-h-[65vh] max-w-full rounded-2xl border border-white/10 shadow-2xl select-none"
+                  onClick={(e) => e.stopPropagation()}
+                />
+              ) : (
+                <img
+                  key={activeImageIndex}
+                  src={filteredImages[activeImageIndex].src}
+                  alt="Casa La Bella Fullscreen View"
+                  className="max-h-[60vh] sm:max-h-[65vh] max-w-full object-contain rounded-2xl border border-white/10 shadow-2xl select-none animate-gentle-fade-in"
+                  onClick={(e) => e.stopPropagation()}
+                />
+              )}
             </div>
 
             {/* Next Button */}
@@ -260,12 +322,21 @@ export default function VillaGallery() {
                     : 'border-transparent opacity-40 hover:opacity-80'
                     }`}
                 >
-                  <img src={img.src} alt="" className="w-full h-full object-cover" />
+                  {img.type === 'video' ? (
+                    <div className="w-full h-full bg-[#E3E0D8]/45 flex items-center justify-center relative">
+                      <video src={img.src} className="w-full h-full object-cover" muted playsInline />
+                      <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                        <span className="w-4 h-4 rounded-full bg-white/25 flex items-center justify-center text-white">
+                          <span className="border-t-[3px] border-t-transparent border-b-[3px] border-b-transparent border-l-[6px] border-l-white ml-0.5"></span>
+                        </span>
+                      </div>
+                    </div>
+                  ) : (
+                    <img src={img.src} alt="" className="w-full h-full object-cover" />
+                  )}
                 </button>
               ))}
             </div>
-
-
 
           </div>
 
