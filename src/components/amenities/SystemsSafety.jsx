@@ -1,6 +1,6 @@
 import React from 'react';
 import { 
-  Zap, Wifi, Tv, WashingMachine, ShieldCheck, PhoneCall, Music, Baby, BookOpen
+  Zap, Wifi, Tv, WashingMachine, ShieldCheck, PhoneCall, Music, Baby, BookOpen, Disc
 } from 'lucide-react';
 
 export default function SystemsSafety() {
@@ -67,6 +67,11 @@ export default function SystemsSafety() {
               title: "Guest Books Library",
               icon: <BookOpen className="w-6 h-6 text-[#ff6e00]" />,
               desc: "A custom shelf of books left behind by previous guests for vacation reading."
+            },
+            {
+              title: "Satellite TV & DVD Player",
+              icon: <Disc className="w-6 h-6 text-[#007979]" />,
+              desc: "Satellite/cable connection, DVD player, video library, and a physical music library."
             }
           ].map((item, idx) => (
             <div 

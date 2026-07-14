@@ -46,7 +46,8 @@ export default function SuitesComfort() {
                 { name: "Linens & Towels Inc.", desc: "All bath, bed, and pool towels provided." },
                 { name: "Mid-week Changes", desc: "Change of sheets available for a small fee if desired." },
                 { name: "Climate Control AC", desc: "Separate room controls plus ceiling fans." },
-                { name: "No Fireplace / Wood Stove", desc: "No fireplace or wood stove inside the villa." }
+                { name: "No Fireplace / Wood Stove", desc: "No fireplace or wood stove inside the villa." },
+                { name: "Age Suitability", desc: "Minimum age limit enforced for primary renters." }
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start gap-3">
                   <Check className="w-4 h-4 text-[#ff6e00] mt-1 shrink-0" />

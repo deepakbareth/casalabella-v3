@@ -3,9 +3,10 @@ import { MapPin, Info } from 'lucide-react';
 
 export default function LocalActivities() {
   const activities = [
-    "Snorkeling (Garrafon Park walking distance)", "Scuba Diving", "Sailing & Boating", 
-    "Jet Skiing", "Kayaking & Windsurfing", "Whale Watching (Seasonal)", 
-    "Wildlife Viewing", "Deep Sea Fishing", "Local Shopping & Dining (10 mins to Downtown)"
+    "Snorkeling (Garrafon Park walking distance)", "Swimming & Water Park", "Scuba Diving", 
+    "Sailing & Boating", "Marina Access", "Jet Skiing", "Kayaking & Windsurfing", 
+    "Whale Watching (Seasonal)", "Wildlife Viewing", "Deep Sea Fishing",
+    "Local Shopping & Dining (10 mins to Downtown)", "Health & Beauty Spa Services"
   ];
 
   return (
