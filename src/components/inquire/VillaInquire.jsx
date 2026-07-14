@@ -16,7 +16,7 @@ export default function VillaInquire() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10 space-y-16">
-        
+
         {/* Section Header */}
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#ff6e00] block">
@@ -32,9 +32,9 @@ export default function VillaInquire() {
 
         {/* Section 1: Contacts and Form Grid (Asymmetrical balanced layout) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
-          
+
           {/* Left Column: Direct Channels & Policies */}
-          <div className="lg:col-span-5 flex flex-col justify-between gap-8">
+          <div className="lg:col-span-5 flex flex-col justify-between gap-2">
             <InquireDirect />
             <InquirePolicies />
           </div>

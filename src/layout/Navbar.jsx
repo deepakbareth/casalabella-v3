@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Calendar, User } from 'lucide-react';
+import { Menu, X, Phone, Calendar, Mail } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
@@ -104,13 +104,13 @@ export default function Navbar() {
               <Phone className={`w-4 h-4 transition-colors duration-500 ${scrolled ? 'text-[#112828]/70' : 'text-white/70'}`} />
             </a>
 
-            {/* Profile Circle */}
-            <button className={`w-11 h-11 flex items-center justify-center rounded-full transition-all duration-500 ${scrolled
+            {/* Direct Email Link */}
+            <a href="mailto:vailcuny@gmail.com?subject=Casa La Bella Booking Inquiry" className={`w-11 h-11 flex items-center justify-center rounded-full transition-all duration-500 ${scrolled
               ? 'bg-[#FFF0E4] text-[#112828] hover:bg-white shadow-lg'
               : 'bg-black/40 backdrop-blur-md text-white border border-white/10 hover:bg-white/20'
               }`}>
-              <User className={`w-4 h-4 transition-colors duration-500 ${scrolled ? 'text-[#112828]/70' : 'text-white/70'}`} />
-            </button>
+              <Mail className={`w-4 h-4 transition-colors duration-500 ${scrolled ? 'text-[#112828]/70' : 'text-white/70'}`} />
+            </a>
           </div>
 
           {/* Mobile Menu Trigger */}
