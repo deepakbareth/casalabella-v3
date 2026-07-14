@@ -163,15 +163,14 @@ export default function VillaGallery() {
         </div>
 
         {/* Dynamic Image & Video Grid */}
-        <div className={`grid gap-8 justify-center mx-auto ${
-          filteredImages.slice(0, visibleCount).length === 1
+        <div className={`grid gap-8 justify-center mx-auto ${filteredImages.slice(0, visibleCount).length === 1
             ? 'grid-cols-1 max-w-sm'
             : filteredImages.slice(0, visibleCount).length === 2
-            ? 'grid-cols-1 sm:grid-cols-2 max-w-2xl'
-            : filteredImages.slice(0, visibleCount).length === 3
-            ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-5xl'
-            : 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full'
-        }`}>
+              ? 'grid-cols-1 sm:grid-cols-2 max-w-2xl'
+              : filteredImages.slice(0, visibleCount).length === 3
+                ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-5xl'
+                : 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full'
+          }`}>
           {filteredImages.slice(0, visibleCount).map((img, idx) => (
             <div
               key={img.id}
