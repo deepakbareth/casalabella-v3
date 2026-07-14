@@ -140,8 +140,8 @@ export default function VillaGallery() {
         </div>
 
         {/* Filter Navigation Menu */}
-        <div className="flex justify-center">
-          <div className="inline-flex items-center p-1.5 bg-white/70 backdrop-blur-md border border-[#E3E0D8] rounded-full shadow-sm">
+        <div className="flex justify-center px-4">
+          <div className="flex flex-wrap sm:inline-flex items-center justify-center gap-2 sm:gap-0 p-1.5 sm:bg-white/70 sm:backdrop-blur-md sm:border sm:border-[#E3E0D8] rounded-3xl sm:rounded-full sm:shadow-sm max-w-full">
             {[
               { id: 'all', label: 'All Media' },
               { id: 'exterior', label: 'Exterior & Pools' },
@@ -151,10 +151,11 @@ export default function VillaGallery() {
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-6 py-2.5 rounded-full font-sans text-xs uppercase tracking-widest font-extrabold transition-all duration-300 cursor-pointer ${activeCategory === cat.id
-                  ? 'bg-[#2D332F] text-white shadow-md'
-                  : 'text-[#5A605C] hover:text-[#2D332F]'
-                  }`}
+                className={`px-4 sm:px-6 py-2.5 rounded-full font-sans text-[10px] sm:text-xs uppercase tracking-widest font-extrabold transition-all duration-300 cursor-pointer ${
+                  activeCategory === cat.id
+                    ? 'bg-[#2D332F] text-white shadow-md border border-transparent'
+                    : 'text-[#5A605C] hover:text-[#2D332F] bg-white sm:bg-transparent border border-[#E3E0D8] sm:border-transparent'
+                }`}
               >
                 {cat.label}
               </button>

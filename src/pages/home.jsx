@@ -22,7 +22,7 @@ export default function Home() {
         <BookingInquiry />
       </main>
 
-      <Footer />
+
     </div>
   );
 }
