@@ -17,9 +17,9 @@ const AmenitiesPage = lazy(() => import('./pages/amenities'));
 const ReviewsPage = lazy(() => import('./pages/reviews'));
 const InquirePage = lazy(() => import('./pages/inquire'));
 
-// Tiny helper component to handle smooth hash scrolling
+// Helper component to handle scroll reset on route change & smooth hash scrolling
 function ScrollToHashElement() {
-  const { hash } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
     if (hash) {
@@ -32,9 +32,10 @@ function ScrollToHashElement() {
         return () => clearTimeout(timer);
       }
     } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Instantly reset window scroll position to top on page transition
+      window.scrollTo(0, 0);
     }
-  }, [hash]);
+  }, [pathname, hash]);
 
   return null;
 }
@@ -45,53 +46,53 @@ function App() {
       <ScrollToHashElement />
       <Navbar />
       <Routes>
-        <Route 
-          path="/" 
+        <Route
+          path="/"
           element={
             <Suspense fallback={<HomeSkeleton />}>
               <Home />
             </Suspense>
-          } 
+          }
         />
-        <Route 
-          path="/about" 
+        <Route
+          path="/about"
           element={
             <Suspense fallback={<AboutSkeleton />}>
               <AboutPage />
             </Suspense>
-          } 
+          }
         />
-        <Route 
-          path="/gallery" 
+        <Route
+          path="/gallery"
           element={
             <Suspense fallback={<GallerySkeleton />}>
               <GalleryPage />
             </Suspense>
-          } 
+          }
         />
-        <Route 
-          path="/amenities" 
+        <Route
+          path="/amenities"
           element={
             <Suspense fallback={<AmenitiesSkeleton />}>
               <AmenitiesPage />
             </Suspense>
-          } 
+          }
         />
-        <Route 
-          path="/reviews" 
+        <Route
+          path="/reviews"
           element={
             <Suspense fallback={<ReviewsSkeleton />}>
               <ReviewsPage />
             </Suspense>
-          } 
+          }
         />
-        <Route 
-          path="/inquire" 
+        <Route
+          path="/book-now"
           element={
             <Suspense fallback={<InquireSkeleton />}>
               <InquirePage />
             </Suspense>
-          } 
+          }
         />
       </Routes>
       <Footer />

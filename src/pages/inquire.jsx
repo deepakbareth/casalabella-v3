@@ -8,7 +8,7 @@ export default function InquirePage() {
     <div className="min-h-screen bg-[#F7F5F0] text-[#2D332F] antialiased overflow-x-hidden">
       <main>
         {/* Banner with background sunset image */}
-        <PageBanner title="Inquire" bgImage={bannerImg} />
+        <PageBanner title="Book Now" bgImage={bannerImg} />
 
         {/* Form and Map wrapper */}
         <VillaInquire />

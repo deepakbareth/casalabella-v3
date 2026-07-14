@@ -87,13 +87,13 @@ export default function Navbar() {
 
           {/* Right: Actions / Icons (Desktop) */}
           <div className="hidden lg:flex items-center gap-3 pl-8 pointer-events-auto">
-            {/* Setting / Inquire Pill */}
-            <Link to="/inquire" className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-500 ${scrolled
+            {/* Setting / book now  Pill */}
+            <Link to="/book-now" className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-500 ${scrolled
               ? 'bg-[#FFF0E4] text-[#112828] hover:bg-white shadow-lg'
               : 'bg-black/40 backdrop-blur-md text-white border border-white/10 hover:bg-white/20'
               }`}>
               <Calendar className={`w-4 h-4 transition-colors duration-500 ${scrolled ? 'text-[#112828]/70' : 'text-white/70'}`} />
-              Inquire
+              Book Now
             </Link>
 
             {/* Phone Circle */}
@@ -160,8 +160,8 @@ export default function Navbar() {
           ))}
 
           <div className="flex gap-3 sm:gap-4 mt-6 sm:mt-8">
-            <Link to="/inquire" onClick={() => setIsOpen(false)} className="flex-1 flex items-center justify-center gap-2 bg-[#ff6e00] text-[#FFF0E4] px-4 py-3 sm:px-6 sm:py-4 rounded-full text-sm sm:text-base font-medium active:scale-95 transition-transform">
-              <Calendar className="w-4 h-4 sm:w-5 sm:h-5" /> Inquire
+            <Link to="/book-now" onClick={() => setIsOpen(false)} className="flex-1 flex items-center justify-center gap-2 bg-[#ff6e00] text-[#FFF0E4] px-4 py-3 sm:px-6 sm:py-4 rounded-full text-sm sm:text-base font-medium active:scale-95 transition-transform">
+              <Calendar className="w-4 h-4 sm:w-5 sm:h-5" /> Book Now
             </Link>
             <a href="tel:+19703908874" className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 bg-[#FFF0E4]/10 text-[#FFF0E4] flex items-center justify-center rounded-full border border-[#FFF0E4]/20 active:scale-95 transition-transform">
               <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
