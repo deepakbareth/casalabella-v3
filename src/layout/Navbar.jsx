@@ -90,7 +90,7 @@ export default function Navbar() {
             {/* Setting / Inquire Pill */}
             <Link to="/inquire" className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-500 ${scrolled
               ? 'bg-[#FFF0E4] text-[#112828] hover:bg-white shadow-lg'
-              : 'bg-black/40 backdrop-blur-md text-white '
+              : 'bg-black/40 backdrop-blur-md text-white border border-white/10 hover:bg-white/20'
               }`}>
               <Calendar className={`w-4 h-4 transition-colors duration-500 ${scrolled ? 'text-[#112828]/70' : 'text-white/70'}`} />
               Inquire
