@@ -63,11 +63,11 @@ export default function InquireForm() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
-          
+
           {/* Form Heading */}
           <div>
             <h3 className="font-sans text-xl font-bold uppercase text-[#2D332F] tracking-tight">
-              Inquire About Stay
+              Book Now
             </h3>
             <p className="text-xs text-[#5A605C]">Please provide details of your potential trip below.</p>
           </div>
