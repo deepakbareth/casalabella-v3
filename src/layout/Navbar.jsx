@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Settings, User } from 'lucide-react';
+import { Menu, X, Phone, Calendar, User } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
@@ -12,8 +12,7 @@ export default function Navbar() {
     { label: 'About', to: '/about' },
     { label: 'Gallery', to: '/gallery' },
     { label: 'Amenities', to: '/amenities' },
-    { label: 'Reviews', to: '/reviews' },
-    { label: 'Inquire', to: '/inquire' }
+    { label: 'Reviews', to: '/reviews' }
   ];
 
   const isActive = (link) => {
@@ -68,7 +67,7 @@ export default function Navbar() {
           </div>
 
           {/* Center: Main Pill Navigation (Desktop) */}
-          <nav className={`hidden lg:flex items-center p-1.5 rounded-full pointer-events-auto transition-all duration-500 ${scrolled
+          <nav className={`hidden lg:flex md:gap-8 gap-2 items-center p-1.5 rounded-full pointer-events-auto transition-all duration-500 ${scrolled
             ? 'bg-[#FFF0E4] shadow-xl'
             : 'bg-black/40 backdrop-blur-md '
             }`}>
@@ -93,7 +92,7 @@ export default function Navbar() {
               ? 'bg-[#FFF0E4] text-[#112828] hover:bg-white shadow-lg'
               : 'bg-black/40 backdrop-blur-md text-white '
               }`}>
-              <Settings className={`w-4 h-4 transition-colors duration-500 ${scrolled ? 'text-[#112828]/70' : 'text-white/70'}`} />
+              <Calendar className={`w-4 h-4 transition-colors duration-500 ${scrolled ? 'text-[#112828]/70' : 'text-white/70'}`} />
               Inquire
             </Link>
 
@@ -162,7 +161,7 @@ export default function Navbar() {
 
           <div className="flex gap-3 sm:gap-4 mt-6 sm:mt-8">
             <Link to="/inquire" onClick={() => setIsOpen(false)} className="flex-1 flex items-center justify-center gap-2 bg-[#ff6e00] text-[#FFF0E4] px-4 py-3 sm:px-6 sm:py-4 rounded-full text-sm sm:text-base font-medium active:scale-95 transition-transform">
-              <Settings className="w-4 h-4 sm:w-5 sm:h-5" /> Inquire
+              <Calendar className="w-4 h-4 sm:w-5 sm:h-5" /> Inquire
             </Link>
             <a href="tel:+19703908874" className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 bg-[#FFF0E4]/10 text-[#FFF0E4] flex items-center justify-center rounded-full border border-[#FFF0E4]/20 active:scale-95 transition-transform">
               <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
