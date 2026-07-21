@@ -24,7 +24,7 @@ export default function InquireDirect() {
           </div>
           <div>
             <span className="text-[9px] text-[#8A908C] uppercase tracking-widest block font-extrabold">Call / Text Direct</span>
-            <span className="text-sm font-sans text-[#2D332F] font-bold group-hover:text-[#ff6e00] transition-colors">+1 (970) 390-8874</span>
+            <span className="text-sm font-sans text-[#2D332F] font-bold group-hover:text-[#ff6e00] transition-colors">+1 970-390-8874</span>
           </div>
         </a>
 

@@ -45,7 +45,7 @@ export default function Footer() {
               className="text-sm font-sans text-[#FFF0E4]/80 hover:text-[#24B1B1] transition-colors flex items-center gap-3 group"
             >
               <Phone className="w-4 h-4 text-[#24B1B1]" />
-              <span>1-970-390-8874</span>
+              <span>+1 970-390-8874</span>
             </a>
           </div>
 

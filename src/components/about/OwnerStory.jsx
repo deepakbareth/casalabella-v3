@@ -64,7 +64,7 @@ export default function OwnerStory() {
                   </div>
                   <div>
                     <span className="block text-xs uppercase font-bold text-[#8A908C]">Phone & Text</span>
-                    <span className="text-sm font-semibold text-[#2D332F]">+1-970-390-8874</span>
+                    <span className="text-sm font-semibold text-[#2D332F]">+1 970-390-8874</span>
                   </div>
                 </a>
 

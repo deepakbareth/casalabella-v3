@@ -1,5 +1,6 @@
 import React from 'react';
 import image from '../../assets/banner3.jpg';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   return (
@@ -69,9 +70,9 @@ export default function Hero() {
           </div>
 
           {/* Action Button */}
-          <button className="w-full sm:w-auto px-6 lg:px-10 py-4 lg:py-5 bg-[#ff6e00] text-[#F7F5F0] text-[11px] lg:text-xs font-black uppercase tracking-[0.2em] hover:bg-[#F7F5F0] hover:text-[#2D332F] transition-colors duration-300 rounded-md lg:rounded-sm">
+          <Link to="/book-now"><button className="w-full cursor-pointer sm:w-auto px-6 lg:px-10 py-4 lg:py-5 bg-[#ff6e00] text-[#F7F5F0] text-[11px] lg:text-xs font-black uppercase tracking-[0.2em] hover:bg-[#F7F5F0] hover:text-[#2D332F] transition-colors duration-300 rounded-md lg:rounded-sm">
             Reserve the Estate
-          </button>
+          </button></Link>
 
         </div>
 

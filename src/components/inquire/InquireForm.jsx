@@ -7,6 +7,7 @@ export default function InquireForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     checkIn: null,
     checkOut: null,
     guests: '1',
@@ -53,7 +54,7 @@ export default function InquireForm() {
           </p>
           <button
             onClick={() => {
-              setFormData({ name: '', email: '', checkIn: null, checkOut: null, guests: '1', message: '' });
+              setFormData({ name: '', email: '', phone: '', checkIn: null, checkOut: null, guests: '1', message: '' });
               setSubmitted(false);
             }}
             className="px-8 py-3.5 border border-[#ff6e00] hover:bg-[#ff6e00] text-[#ff6e00] hover:text-white text-xs font-extrabold uppercase tracking-widest rounded-full transition-all duration-300 cursor-pointer"
@@ -72,24 +73,25 @@ export default function InquireForm() {
             <p className="text-xs text-[#5A605C]">Please provide details of your potential trip below.</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {/* Name */}
-            <div>
-              <label className="block text-[10px] uppercase tracking-[0.25em] text-[#8A908C] font-extrabold mb-2.5" htmlFor="name">
-                Full Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="e.g. Stephanie Vance"
-                className={inputClasses}
-              />
-            </div>
+          {/* Row 1: Full Name */}
+          <div>
+            <label className="block text-[10px] uppercase tracking-[0.25em] text-[#8A908C] font-extrabold mb-2.5" htmlFor="name">
+              Full Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="e.g. Stephanie Vance"
+              className={inputClasses}
+            />
+          </div>
 
+          {/* Row 2: Email & Phone */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Email */}
             <div>
               <label className="block text-[10px] uppercase tracking-[0.25em] text-[#8A908C] font-extrabold mb-2.5" htmlFor="email">
@@ -103,6 +105,23 @@ export default function InquireForm() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="e.g. stephanie@example.com"
+                className={inputClasses}
+              />
+            </div>
+
+            {/* Phone */}
+            <div>
+              <label className="block text-[10px] uppercase tracking-[0.25em] text-[#8A908C] font-extrabold mb-2.5" htmlFor="phone">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="e.g. +1 970-390-8874"
                 className={inputClasses}
               />
             </div>
